@@ -13,7 +13,7 @@
   <nav>
     <img src="images/PowerIcon.png" alt="Power Logo" id="logo">
     <ul>
-      <li><a href="homepage.html" id="home-link">Home</a></li>
+      <li><a href="index.html" id="home-link">Home</a></li>
       <li><a href="televisions.html" id="tv-link">Televisions</a></li>
       <li><a href="aboutus.html" id="about-link">About Us</a></li>
     </ul>
@@ -79,12 +79,12 @@
   <script>
     // Logo click -> Go to homepage
     document.getElementById("logo").addEventListener("click", function() {
-      window.location.href = "homepage.html";
+      window.location.href = "index.html";
     });
 
     // Highlight active link
     const currentPage = window.location.pathname.split("/").pop();
-    if (currentPage.includes("homepage")) {
+    if (currentPage.includes("index")) {
       document.getElementById("home-link").classList.add("active");
     } else if (currentPage.includes("televisions")) {
       document.getElementById("tv-link").classList.add("active");
