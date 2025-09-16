@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/PowerIcon.png">
+</head>
+<body>
+
+  <!-- ====== NAVIGATION MENU ====== -->
+  <nav>
+    <img src="images/PowerIcon.png" alt="Power Logo" id="logo">
+    <ul>
+      <li><a href="homepage.html" id="home-link">Home</a></li>
+      <li><a href="televisions.html" id="tv-link">Televisions</a></li>
+      <li><a href="aboutus.html" id="about-link">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- ====== PAGE CONTENT ====== -->
+  <div id="homepage-content">
+    <h1>Welcome to Energy Insights Australia</h1>
+    <p>
+      Australians rely heavily on household appliances, but many do not realise how much energy these devices consume. 
+      With electricity costs on the rise and growing awareness of sustainability, understanding energy consumption is 
+      more important than ever. This site provides insights into how everyday appliances perform, compares their 
+      efficiency, and highlights opportunities for smarter energy choices.
+    </p>
+
+    <!-- Hero image (banner) -->
+    <div class="hero-image">
+      <img src="images/energy.png" alt="Solar and Wind Energy picture">
+    </div>
+
+    <h2><i class="fas fa-question-circle"></i> Why Energy Efficiency Matters</h2>
+    <p>
+      According to recent Australian market studies, appliances such as refrigerators, televisions, air conditioners, 
+      and washing machines account for nearly <strong>40% of household energy usage</strong>. Choosing energy-efficient 
+      appliances can reduce electricity bills and minimise environmental impact. Many products are now rated under the 
+      <em>Energy Rating Label</em>, which makes it easier for consumers to compare efficiency before purchasing.
+    </p>
+
+    <h2><i class="fas fa-chart-line"></i> Average Energy Consumption by Appliance</h2>
+    <ul>
+      <li><i class="fas fa-box"></i> <strong>Refrigerators & Freezers:</strong> 15–20% of total household energy use</li>
+      <li><i class="fas fa-tv"></i> <strong>Televisions & Entertainment Systems:</strong> 10% of energy consumption</li>
+      <li><i class="fas fa-snowflake"></i> <strong>Air Conditioners:</strong> Up to 40% during summer</li>
+      <li><i class="fas fa-tint"></i> <strong>Washing Machines & Dryers:</strong> 5–10%</li>
+    </ul>
+
+  <div class="tips">
+    <h2>
+       <h2><i class="fas fa-lightbulb"></i> Tips for Reducing Energy Costs</h2>
+      Tips for Reducing Energy Costs
+    </h2>
+    <ol>
+      <li>Choose appliances with a high Energy Star rating.</li>
+      <li>Turn off devices at the power point instead of leaving them on standby.</li>
+      <li>Use timers and smart plugs to manage appliance usage.</li>
+      <li>Opt for LED lighting and energy-efficient cooling systems.</li>
+    </ol>
+    </div>
+
+    <p>
+      By making small changes, Australian households can save hundreds of dollars per year and significantly lower 
+      their carbon footprint. Explore our site to discover detailed comparisons, product reviews, and practical guides 
+      to help you make informed choices.
+    </p>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; <span id="year"></span> Kristine Chia Siew Shuen | Code/content generated with the help from GenAI
+  </footer>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // Logo click -> Go to homepage
+    document.getElementById("logo").addEventListener("click", function() {
+      window.location.href = "homepage.html";
+    });
+
+    // Highlight active link
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage.includes("homepage")) {
+      document.getElementById("home-link").classList.add("active");
+    } else if (currentPage.includes("televisions")) {
+      document.getElementById("tv-link").classList.add("active");
+    } else if (currentPage.includes("aboutus")) {
+      document.getElementById("about-link").classList.add("active");
+    }
+
+    // Footer year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

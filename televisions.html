@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Televisions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/PowerIcon.png">
+</head>
+<body>
+
+  <!-- ====== NAVIGATION MENU ====== -->
+  <nav>
+    <img src="images/PowerIcon.png" alt="Power Logo" id="logo">
+    <ul>
+      <li><a href="homepage.html" id="home-link">Home</a></li>
+      <li><a href="televisions.html" id="tv-link">Televisions</a></li>
+      <li><a href="aboutus.html" id="about-link">About Us</a></li>
+    </ul>
+  </nav>
+
+<!-- ====== PAGE CONTENT ====== -->
+  <div id="televisions-content" class="page-section">
+    <h1><i class="fas fa-tv"></i> Television Energy Consumption in Australia</h1>
+    <p>
+      Televisions are among the most common household appliances in Australia, with nearly every home owning at least one unit. 
+      However, the type and size of a television significantly affect how much energy it consumes. With the growing popularity 
+      of larger screens, smart TVs, and OLED technology, understanding their energy performance is essential for reducing costs 
+      and minimising environmental impact.
+    </p>
+
+    <!-- Hero image -->
+    <div class="television-hero">
+      <img src="images/television.jpg" alt="Television energy usage">
+    </div>
+
+    <h2><i class="fas fa-chart-line"></i> Average Energy Usage by TV Type</h2>
+    <ul class="tv-energy-list">
+      <li><strong>LED/LCD TVs:</strong> Typically 80–150 kWh per year depending on size.</li>
+      <li><strong>OLED TVs:</strong> Provide excellent display quality but may consume 30% more energy than LED models.</li>
+      <li><strong>Plasma TVs:</strong> Older models, now uncommon, used up to 400 kWh annually.</li>
+      <li><strong>Smart TVs:</strong> Extra features like Wi-Fi and apps increase standby power usage.</li>
+    </ul>
+
+    <h2><i class="fas fa-lightbulb"></i> Tips for Saving Energy on Televisions</h2>
+    <ol class="tv-tips">
+      <li>Choose the right size TV for your room — bigger screens usually consume more power.</li>
+      <li>Look for models with a high <em>Energy Star</em> rating.</li>
+      <li>Enable energy-saving modes that automatically adjust brightness.</li>
+      <li>Turn off the TV at the wall socket to avoid standby power drain.</li>
+    </ol>
+
+    <p>
+      According to the Australian Energy Regulator, televisions can account for up to 
+      <strong>10% of household electricity usage</strong>, especially in homes with multiple units. 
+      By selecting efficient models and following smart usage practices, Australians can enjoy entertainment 
+      while keeping energy costs low.
+    </p>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; <span id="year"></span> Kristine Chia Siew Shuen | Code/content generated with the help from GenAI
+  </footer>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // Logo click -> Go to homepage
+    document.getElementById("logo").addEventListener("click", function() {
+      window.location.href = "homepage.html";
+    });
+
+    // Highlight active link
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage.includes("homepage")) {
+      document.getElementById("home-link").classList.add("active");
+    } else if (currentPage.includes("televisions")) {
+      document.getElementById("tv-link").classList.add("active");
+    } else if (currentPage.includes("aboutus")) {
+      document.getElementById("about-link").classList.add("active");
+    }
+
+    // Footer year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

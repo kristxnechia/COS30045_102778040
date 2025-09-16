@@ -1,0 +1,363 @@
+/* ===== RESET ===== */
+body {
+  margin: 0; /* Removes default browser spacing around page */
+  font-family: Arial, sans-serif;
+  background-color: #FFFAF0;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex; /* Flexbox makes nav items align horizontally */
+  align-items: center; /* Vertically centers logo + links */
+  justify-content: space-between; /* Logo left, links right */
+  background: linear-gradient(90deg, #2f4f4f, #696969); /* gradient */
+  padding: 12px 30px; /* Space inside navbar */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow below nav */
+  position: sticky; /* nav stays on top when scrolling */
+  top: 0;
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+nav img {
+  height: 55px; /* Scales logo */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* animation */
+}
+
+nav img:hover {
+  transform: scale(1.10); /* logo zoom effect */
+}
+
+nav ul {
+  list-style: none;
+  display: flex; /* Puts links side by side */
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* evenly space links */
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #F0E68C;
+  text-decoration: none; /* Removes underline */
+  padding: 10px 14px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out; /* hover effect */
+  font-size: 18px;
+  font-weight: 400;
+  position: relative; /* Needed for animated underline (::after) */
+}
+
+/* Hover underline animation */
+nav ul li a::after {
+  content: ""; /* Creates a fake line */
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #F0E68C;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Line slides under link when hovered */
+}
+
+nav ul li a:hover {
+  color: #fff; /* Link text turns white */
+}
+
+/* Current page feedback */
+nav ul li a.active {
+  font-weight: 600; /* Bold */
+  color: #fff;
+}
+
+nav ul li a.active::after {
+  width: 100%; /* Keeps underline on active page */
+}
+
+/* ===== HOMEPAGE CONTENT ===== */
+#homepage-content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Title */
+#homepage-content h1 {
+  font-size: 38px;
+  color: #2F4F4F;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Hero image */
+#homepage-content .hero-image {
+  text-align: center;
+  margin: 20px 0;
+}
+#homepage-content .hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section Titles */
+#homepage-content h2 {
+  font-size: 24px;
+  color: #006400;
+  margin: 30px 0 15px;
+  border-left: 5px solid #708090;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+h2 i {
+  color: #4682B4;   /* steel blue to match energy theme */
+  margin-right: 8px; /* space between icon and text */
+}
+
+/* Paragraphs */
+#homepage-content p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* Lists styled as content blocks */
+#homepage-content ul,
+#homepage-content ol {
+  margin: 15px 0 25px 20px;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-left: 4px solid #708090;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#homepage-content ul li,
+#homepage-content ol li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Highlighted text */
+#homepage-content strong {
+  color: #000;
+}
+
+#homepage-content em {
+  color: #555;
+  font-style: italic;
+}
+
+/* Card-like Tip Section */
+#homepage-content .tips {
+  background: #eaf4ea;
+  border: 1px solid #c9e2c9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#homepage-content .tips h2 {
+  color: #2e7d32;
+  border-left-color: #2e7d32;
+}
+
+#homepage-content .tips ol li {
+  margin-bottom: 12px;
+}
+
+.tips h2 i {
+  color: #FFD700; /* gold/yellow bulb */
+  margin-right: 10px;
+}
+
+/* ===== TELEVISIONS PAGE ===== */
+#televisions-content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#televisions-content h1 {
+  font-size: 38px;
+  color: #2F4F4F;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#televisions-content h1 i {
+  color: #2c3e50; /* Dark navy for icon */
+  margin-right: 10px;
+}
+
+#televisions-content h2 {
+  font-size: 24px;
+  color: #006400;
+  margin: 30px 0 15px;
+  border-left: 5px solid #708090;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+#televisions-content h2 i {
+  color: #4682B4; /* steel blue for icons */
+  margin-right: 8px;
+}
+
+#televisions-content p {
+  margin-bottom: 18px;
+  text-align: justify;
+  color: #555;
+}
+
+/* Hero image */
+.television-hero {
+  text-align: center;
+  margin: 20px 0;
+}
+.television-hero img {
+  width: 50%;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Energy usage list */
+.tv-energy-list {
+  margin: 15px 0 25px 20px;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-left: 4px solid #708090;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tv-energy-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Tips list */
+.tv-tips {
+  margin: 15px 0 25px 20px;
+  padding: 15px 20px;
+  background: #eaf4ea;
+  border-left: 4px solid #2e7d32;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tv-tips li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+.tv-tips h2 i {
+  color: #FFD700; /* gold/yellow bulb */
+  margin-right: 10px;
+}
+
+/* ===== ABOUT US PAGE ===== */
+#aboutus-content {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Title */
+#aboutus-content h1 {
+  font-size: 38px;
+  color: #2F4F4F;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#aboutus-content h1 i {
+  color: #2c3e50; /* Dark navy for icon */
+  margin-right: 10px;
+}
+
+/* Section Titles */
+#aboutus-content h2 {
+  font-size: 24px;
+  color: #006400;
+  margin: 30px 0 15px;
+  border-left: 5px solid #708090;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+#aboutus-content h2 i {
+  color: #4682B4; /* steel blue to match theme */
+  margin-right: 8px;
+}
+
+/* Paragraphs */
+#aboutus-content p {
+  margin-bottom: 18px;
+  text-align: justify;
+  color: #555;
+}
+
+/* Hero image */
+.aboutus-hero {
+  text-align: center;
+  margin: 20px 0;
+}
+.aboutus-hero img {
+  width: 70%;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* List styling */
+.aboutus-list {
+  margin: 15px 0 25px 20px;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-left: 4px solid #708090;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.aboutus-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(90deg, #2f4f4f, #696969);
+  color: white; 
+  text-align: center;
+  padding: 20px;
+}
+

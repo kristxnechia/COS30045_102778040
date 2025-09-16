@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/PowerIcon.png">
+</head>
+<body>
+
+  <!-- ====== NAVIGATION MENU ====== -->
+  <nav>
+    <img src="images/PowerIcon.png" alt="Power Logo" id="logo">
+    <ul>
+      <li><a href="homepage.html" id="home-link">Home</a></li>
+      <li><a href="televisions.html" id="tv-link">Televisions</a></li>
+      <li><a href="aboutus.html" id="about-link">About Us</a></li>
+    </ul>
+  </nav>
+
+ <!-- ====== PAGE CONTENT ====== -->
+  <div id="aboutus-content" class="page-section">
+    <h1><i class="fas fa-users"></i> About Us</h1>
+    <p>
+      Welcome to <strong>Energy Insights Australia</strong> — a platform dedicated to helping 
+      households and businesses make smarter energy choices. With electricity costs continuing 
+      to rise, our goal is to provide clear, practical, and reliable information that empowers 
+      Australians to manage their energy usage more efficiently.
+    </p>
+
+    <!-- Hero image -->
+    <div class="aboutus-hero">
+      <img src="images/team.jpg" alt="Energy Insights team working together">
+    </div>
+
+    <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+    <p>
+      Our mission is to raise awareness about the impact of everyday appliances on household 
+      electricity consumption. We believe that small, informed decisions can lead to 
+      significant savings — both financially and environmentally. By combining data-driven 
+      insights with practical tips, we aim to make energy efficiency simple and accessible.
+    </p>
+
+    <h2><i class="fas fa-lightbulb"></i> What We Do</h2>
+    <ul class="aboutus-list">
+      <li>Analyse and compare appliance energy performance in the Australian market.</li>
+      <li>Provide easy-to-understand guides for choosing energy-efficient products.</li>
+      <li>Share tips on reducing electricity usage at home and at work.</li>
+      <li>Promote sustainable practices that benefit both consumers and the environment.</li>
+    </ul>
+
+    <h2><i class="fas fa-leaf"></i> Why Choose Us</h2>
+    <p>
+      We are passionate about sustainability and committed to delivering accurate, 
+      up-to-date information. Whether you are buying a new television, comparing 
+      refrigerators, or simply looking for ways to cut down your energy bill, 
+      <em>Energy Insights Australia</em> is here to guide you every step of the way.
+    </p>
+  </div>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    &copy; <span id="year"></span> Kristine Chia Siew Shuen | Code/content generated with the help from GenAI
+  </footer>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    // Logo click -> Go to homepage
+    document.getElementById("logo").addEventListener("click", function() {
+      window.location.href = "homepage.html";
+    });
+
+    // Highlight active link
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage.includes("homepage")) {
+      document.getElementById("home-link").classList.add("active");
+    } else if (currentPage.includes("televisions")) {
+      document.getElementById("tv-link").classList.add("active");
+    } else if (currentPage.includes("aboutus")) {
+      document.getElementById("about-link").classList.add("active");
+    }
+
+    // Footer year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
